@@ -8,12 +8,30 @@ const userNameSchema = new Schema<UserName>({
 });
 
 const gurdianSchema = new Schema<Guardian>({
-  fatherName: { type: String, required: true },
-  FatherOccupation: { type: String, required: true },
-  fatherContactNo: { type: String, required: true },
-  motherName: { type: String, required: true },
-  motherOccupation: { type: String, required: true },
-  motherContactNo: { type: String, required: true },
+  fatherName: {
+    type: String,
+    required: true,
+  },
+  fatherOccupation: {
+    type: String,
+    required: true,
+  },
+  fatherContactNo: {
+    type: String,
+    required: true,
+  },
+  motherName: {
+    type: String,
+    required: true,
+  },
+  motherOccupation: {
+    type: String,
+    required: true,
+  },
+  motherContactNo: {
+    type: String,
+    required: true,
+  },
 });
 
 const localGurdianSchema = new Schema<LocalGurdian>({
@@ -24,7 +42,7 @@ const localGurdianSchema = new Schema<LocalGurdian>({
 
 const studentSchema = new Schema<Student>({
   id: { type: String },
-  name: { userNameSchema },
+  name: userNameSchema,
   gender: ['male', 'female'],
   dateOfBirth: { type: String },
   email: { type: String, required: true },
@@ -33,17 +51,11 @@ const studentSchema = new Schema<Student>({
   bloodGroup: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
   presentAddress: { type: String, required: true },
   permanentAddress: { type: String, required: true },
-  guardian: {
-    gurdianSchema,
-  },
-  localGurdian: {
-    localGurdianSchema,
-  },
+  guardian: gurdianSchema,
+  localGurdian: localGurdianSchema,
   profileImg: { type: String },
   isActive: ['active', 'blocked'],
 });
 
-
-
 // Creating model
-const Student = model<Student>('Student', studentSchema);
+export const StudentModel = model<Student>('Student', studentSchema);

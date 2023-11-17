@@ -1,5 +1,3 @@
-
-
 export type UserName = {
   firstName: string;
   middleName: string;
@@ -8,11 +6,11 @@ export type UserName = {
 
 export type Guardian = {
   fatherName: string;
-  FatherOccupation: string;
+  fatherOccupation: string;
   fatherContactNo: string;
   motherName: string;
-  motherContactNo: string;
   motherOccupation: string;
+  motherContactNo: string;
 };
 
 export type LocalGurdian = {
