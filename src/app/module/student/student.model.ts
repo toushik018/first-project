@@ -130,6 +130,10 @@ const studentSchema = new Schema<TStudent, StudentModel>(
       type: Schema.Types.ObjectId,
       ref: 'AcademicSemester'
     },
+    academicDepartment: {
+      type: Schema.Types.ObjectId,
+      ref: 'AcademicDepartment'
+    },
     isDeleted: { type: Boolean, default: false },
   },
   {
@@ -173,6 +177,10 @@ studentSchema.statics.isUserExists = async function (id: string) {
 
   return existingUser;
 };
+
+
+
+
 
 // Creating a custom instance method
 // studentSchema.methods.isUserExist = async function (id: string) {
