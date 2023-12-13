@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import express, { Application, Request, Response, NextFunction } from 'express';
+import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import globalErrorHandler from './app/middleware/globalErrorHandler';
 import notFound from './app/middleware/notFound';
@@ -23,7 +20,7 @@ const getAController = (req: Request, res: Response) => {
 
 app.get('/', getAController);
 
-
+// app.get('/' ,)
 
 app.use(globalErrorHandler);
 

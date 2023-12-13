@@ -1,0 +1,1 @@
+export const studentSeachableFields = ['email', 'name.firstName', 'paresentAddress']

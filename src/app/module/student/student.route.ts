@@ -10,12 +10,12 @@ const router = express.Router();
 
 
 
-router.get('/:studentId', StudentController.getSingleStudent);
-
-router.patch('/:studentId', 
-validateRequest(studentValidationSchema.updateStudentValidationSchema), StudentController.updateStudent);
-
-router.delete('/:studentId', StudentController.deleteStudent);
 router.get('/', StudentController.getAllStudents);
+router.get('/:id', StudentController.getSingleStudent);
+
+router.patch('/:id',
+    validateRequest(studentValidationSchema.updateStudentValidationSchema), StudentController.updateStudent);
+
+router.delete('/:id', StudentController.deleteStudent);
 
 export const StudentRoutes = router;
